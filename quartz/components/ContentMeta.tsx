@@ -25,14 +25,9 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       const segments: string[] = []
 
       if (fileData.dates) {
-        segments.push(formatDate(getDate(cfg, fileData)!, cfg.locale))
+        segments.push("Zuletzt geandert: " + formatDate(getDate(cfg, fileData)!, cfg.locale))
       }
 
-      // Display reading time if enabled
-      if (options.showReadingTime) {
-        const { text: timeTaken, words: _words } = readingTime(text)
-        segments.push(timeTaken)
-      }
 
       return <p class={classNames(displayClass, "content-meta")}>{segments.join(", ")}</p>
     } else {

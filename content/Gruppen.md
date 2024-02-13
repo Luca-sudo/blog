@@ -9,6 +9,8 @@ Gruppen sind eines der Themen, welches am schwersten zu greifen ist, wenn im ers
 2. Die Definition von Gruppen verstehen, und Eigenschaften von Gruppen betrachten.
 3. An Gruppen wiederholen wie man einen Beweis skizziert und strukturiert. Bzw., wie man versteht was man genau beweisen soll.
 
+Gruppen tauchen in unerwarteten Kontexten auf. Beispielsweise begegnen einem diese bei der Betrachtung von [[Permutation|Permutationen]], wodurch man die [[Symmetriegruppe]] erhaelt.
+
 # Rechnen mit Bruechen
 
 Wenn wir bspw. mit den ganzen Zahlen rechnen, dann haben wir einige Eigenschaften die es leichter machen; gucken wir uns dazu mal an, was man bei der Multiplikation von Bruechen so machen kann.
@@ -64,5 +66,41 @@ Das koennen wir wie folgt pruefen:
 2. Wir rechnen $a + b$, was wir umschreiben koennen zu $2a' + 2b'$.[^1] 
 3. Nun nutzen wir die Distributivitaet in $\mathbb{Z}$, und erhalten $2a'+2b' = 2(a' + b')$, womit wir fertig sind. Wir haben eine Zahl, welche sich schreiben laesst als $2$ mal irgendeine andere Zahl.
 
+## Untergruppenkriterium
+
+Um zu pruefen, ob $2\mathbb{Z}$ die Eigenschaften einer Gruppe erfuellt koennen wir einen Satz ausnutzen, und uns Rechnerei sparen.
+
+
+> [!important] Untergruppenkriterium
+> Sei $(G, *)$ eine Gruppe, und $U \subset G$. Dann ist $(U, *)$ eine Untergruppe genau dann, wenn fuer alle $a, b \in U : a*b^{-1} \in U$ und $U \neq \emptyset$.
+
+Wenn wir sagen, dass dieses Kriterium fuer Untergruppen genuegt, dann meinen wir damit, dass aus diesem Kriterium alle drei Eigenschaften von Gruppen folgen. Warum dies so ist, wollen wir uns genauer angucken. Zuerst fangen wir mit der Assoziativitaet an.
+
+Wir haben gegeben, dass $(G, *)$ eine Gruppe ist. Also gilt fuer alle Elemente in $G$ Assoziativitaet - insbesondere gilt Assoziativitaet auch fuer alle Elemente in $U \subset G$. Somit gilt fuer alle Elemente in $U$ Assoziativitaet, die erste Eigenschaft konnten wir also folgern.
+
+Als Naechstes wollen wir sehen, dass auch die Existenz von Inversen folgt. Wir wollen also zeigen, dass wenn $a \in U$, dann folgt, dass auch $a^{-1}$ in $U$. Dafuer nutzen wir das Untegruppenkriterium, aber mit $e$ und $a$.[^2] Setzen wir dies in die Gleichung ein, so erhalten wir $e * a^{-1}$, was gleich $a^{-1}$ ist. Somit erhalten wir also fuer ein beliebiges Element $a \in U$ auch das Inverse $a^{-1} \in U$.
+
+Zu guter letzt wollen wir uns die Existenz vom neutralen Element anschauen. Dies folgt jedoch einem aehnlichen Argument wie das Inverse. Wir nutzen das Untegruppenkriterium mit $a$ und erhalten $a * a^{-1} = e \in U$.
+
+Bleibt noch die Frage warum die Teilmenge *nichtleer* sein muss. Das hat eine rein logische Begruendung. Wenn die Teilmenge leer ist, dann kann ich eine mehr oder weniger beliebige Aussage machen, und diese stimmt. Das liegt daran, dass es kein Element in der Menge gibt. Das gibt jedoch bei der Existenz des neutralen Elements ein Problem: Hier muessen wir mindestens ein Element $a \in U$ haben, damit wir daraus das neutrale Element "konstruieren"[^3] koennen.
+
+
+> [!caution] Achtung
+> Wir haben soeben nur gezeigt, dass wenn das Untergruppenkriterium gilt, dann ist $U$ eine Untergruppe. Da der Satz jedoch sagt, dass $U$ eine Untergruppe ist, genau dann wenn $U$ das Untergruppenkriterium erfuellt, muessten wir ansich noch die Rueckrichtung beweisen. Dies eignet sich gut als Uebung.
+
+Nun wenden wir das Untergruppenkriterium an, um zu beweisen, dass $2\mathbb{Z}$ eine Untergruppe von $(\mathbb{Z}, +)$ ist. Der erste Schritt ist leicht: die Menge $2\mathbb{Z}$ ist nichtleer, da $2 \in 2\mathbb{Z}$. Was zu zeigen bleibt ist, dass $\forall a,b \in 2\mathbb{Z} : a+b^{-1} \in 2\mathbb{Z}$. Bevor wir das tun ist wichtig, sich zwei Dinge nochmal vor Augen zu fuehren. Erstens ist $b^{-1} = -b$, durch die Definition von Addition. Zweitens ist $a - b \in 2\mathbb{Z}$, wenn man $a-b$ schreiben kann als $2(a' - b')$, wobei $a', b' \in \mathbb{Z}$.
+
+Wir fangen mit $a-b$ an. Dies koennen wir umschreiben, da $a, b \in 2\mathbb{Z}$. So erhalten wir $2a' - 2b'$. Nun schmeissen wir Distributivitaet drauf, und erhalten $2(a' - b')$, womit wir bereits am Ziel sind. Die geraden Zahlen sind also eine Untergruppe!
+
+
+> [!example] Uebungsaufgabe
+> Beweise, oder wiederlege, dass die *ungeraden* Zahlen eine Untergruppe von $(\mathbb{Z}, +)$ sind. 
+>
+> *Tipp: ungerade Zahlen kann man schreiben als* $2k + 1$ *fuer ein geeignetes k*.
+
+
+
 
 [^1]: Da wir wissen, dass sowohl $a$ als auch $b$ gerade sind, koennen wir diese schreiben als $2$ mal eine andere Zahl. Das tun wir hier, fuer $a = 2a'$ und $b = 2b'$.
+[^2]: In der Definition des Untegruppenkriteriums nutzen wir also statt einem allgemeinen $a$ das neutrale Element $e$, und anstatt $b$ das Element $a$.
+[^3]: Konstruieren ist vielleicht ein ungluecklich gewaehltes Wort. Was ich damit meine ist, dass wir das neutrale Element erhalten, indem wir ein Element $a \in U$ auf das Untergruppenkriterium schmeissen. Wenn wir dieses Element $a$ nicht haben, dann haben wir auch keine Moeglichkeit das neutrale Element mit dem Untegruppenkriterium herzuleiten.
