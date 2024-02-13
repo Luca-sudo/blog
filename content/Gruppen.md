@@ -1,5 +1,6 @@
 ---
-tags: mathe-1 
+tags:
+  - mathe-1
 draft: true
 ---
 
