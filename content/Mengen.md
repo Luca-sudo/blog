@@ -53,16 +53,43 @@ Beim Durchschnitt betrachte ich alle Elemente die *sowohl* in der einen, *als au
 > $$A \cap B := \{x | x \in A \wedge x \in B\}$$
 
 
-# Teilmenge
+## Teilmenge
+
+Manchmal will man beschreiben, dass eine Menge $A$ in einer anderen Menge $B$ liegt. Das bedeutet genauer, dass alle Elemente aus $B$ auch Elemente aus $A$ sind. Nehmen wir mal ein Beispiel: Die Menge $B$ sind alle Studierenden an einer Universitaet, und die Menge $A$ sind alle Studierenden der Sozialwissenschaften. Es ist klar, dass alle Studierenden, die Sozialwissenschaften studieren, insbesonders auch Studierende an der Uni sind, weshalb sie ebenfalls in der Menge $B$ sind.
 
 
-# Fragen & Uebungsaufgaben
-- Beweise die folgenden Aussagen:
-	- $A \cap B \subset A$
-	- $A \subset A \cup B$
-	- $A \cap B \subset A \cup B$
+> [!info] Teilmenge
+> Eine Menge $B$ ist eine Teilmenge von $A$, geschrieben $B \subset A$, genau dann wenn
+> $$\forall x \in B : x \in A$$
+
+Die Definition spiegelt genau das, was wir vorher beschrieben haben. *Jedes* Element in $B$ ist auch ein Element in $A$; jeder SoWi Studierende ist auch ein Student.
+
+## Komplement
+
+Wenn wir eine Menge haben, dann koennen wir an allen Elementen interessiert sein, die *nicht* in dieser Menge liegen. Um das Beispiel der SoWi Studierenden zu nutzen bestuende das Komplement dieser Menge aus allen Studierenden die *nicht* SoWi studieren. Ein wichtiges Detail fehlt hier noch. Immer wenn wir ein Komplement einer Menge bilden, dann tun wir dies *relativ* zu einer uebergeordneten Menge. Hier war implizit klar, dass wir von einer Gesamtmenge aller Studierenden sprechen, im allgemeinen ist aber nicht immer klar von welcher Grundmenge man spricht. Wenn ich Euch die Menge $\{1, 2, 3\}$ gebe, und Euch bitte das Komplement zu berechnen, dann koennt ihr das nicht unmittelbar. Manche wuerden hier alle natuerlichen, manche alle ganzen Zahlen, und manche alle Reellen Zahlen als Grundmenge betrachten. Deshalb: *Immer darauf achten, was die Grundmenge ist.*
+
+
+> [!info] Komplement
+> Sei $A \subset B$, dann bezeichnen wir mit $A^c$ das Komplement von $A$, welches wie folgt definiert ist:
+> $$A^c = \{x \in B : x \notin A\}$$
+
+# Potenzmenge
+
+
+# Verstaendnisfragen
+1. Angenommen $A \subset B$, gilt dann $B^{c}\subset A^{c}$? Warum?
+2. Was muss fuer $B$ gelten, damit $A \subset (A \cap B)$ gilt?
+# Uebungsaufgaben
+1. Beweise die folgenden Aussagen:
+	- $(A \cap B) \subset A$
+	- $A \subset (A \cup B)$
+	- $(A \cap B) \subset (A \cup B)$
+2. Beweise, dass $(A^c)^c=A$.
+3. Beweise, dass $(A \cap B)^{c} = A^{c} \cup B^{c}$.
+4. Gilt auch $(A \cup B)^{c}= A^{c} \cap B^{c}$? Warum?
 
 
 
 [^1]: Wenn wir von Zahlen sprechen, dann haben die Meisten eine *Intuition*, da man sein ganzes Leben schon mit Zahlen gerechnet hat. Ab dem Moment, wo man ueber komischere Objekte spricht, wird es umso wichtiger, zu wissen, was eine Menge ist.
 [^2]: Von Wikipedia geklaut: https://de.wikipedia.org/wiki/Menge_(Mathematik)
+[^3]: Falls nicht klar ist warum das gilt, so empfehle ich Euch selbst davon zu ueberzeugen.
